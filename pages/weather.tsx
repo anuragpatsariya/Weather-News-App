@@ -1,7 +1,8 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 import type { WeatherData } from '../types/weather';
+import type { NextPage } from 'next';
 
-export default function WeatherPage(): JSX.Element {
+const WeatherPage: NextPage = () => {
   const [city, setCity] = useState<string>('');
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [error, setError] = useState<string>('');
@@ -72,4 +73,6 @@ export default function WeatherPage(): JSX.Element {
       )}
     </div>
   );
-} 
+}
+
+export default WeatherPage; 
