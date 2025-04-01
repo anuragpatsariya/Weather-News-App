@@ -1,7 +1,8 @@
-import { useState, FormEvent, ChangeEvent, useEffect } from 'react';
+import React, { useState, FormEvent, ChangeEvent, useEffect } from 'react';
 import type { NewsData } from '../types/news';
+import type { NextPage } from 'next';
 
-export default function NewsPage(): JSX.Element {
+const NewsPage: NextPage = () => {
   const [keyword, setKeyword] = useState<string>('');
   const [news, setNews] = useState<NewsData | null>(null);
   const [error, setError] = useState<string>('');
@@ -88,4 +89,6 @@ export default function NewsPage(): JSX.Element {
       )}
     </div>
   );
-} 
+}
+
+export default NewsPage; 
